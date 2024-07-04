@@ -1,0 +1,7 @@
+# ignore bin, obj
+bin/
+obj/
+Properties/
+
+# ignote appsettings files
+appsettings*.json
