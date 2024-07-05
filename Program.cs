@@ -24,7 +24,7 @@ app.MapPost("/run", (Query _query) =>
 {
     // Execute the query from dbSERVICE FUNCTION.
     DBJob _dbJob = new DBJob();
-    _dbJob.runDBQuery(_query.QueryString);
+    _dbJob.runDBQuery("");
 });
 
 app.Run();

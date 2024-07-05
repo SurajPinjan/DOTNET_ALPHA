@@ -9,6 +9,16 @@ namespace AutomateLIMS.Jobs
     // create a job class which extends IJob
     public class DBJob
     {
+        public string selectCreator(Query query)
+        {
+            string select = "SELECT ";
+            foreach (var column in query.SelectedColumns)
+            {
+                select += column.ColumnName + (column.TableName == null ? " as " + column.TableName : "") + ", ";
+            }
+            select = select.Substring(0, select.Length - 2);
+            return select;
+        }
         public void runDBQuery(string query)
         {
             IConfigurationBuilder configurationBuilder = new ConfigurationBuilder().AddJsonFile("appSettings.json");
